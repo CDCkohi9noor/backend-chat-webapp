@@ -22,7 +22,12 @@ const corsOption={
 };
 app.use(cors(corsOption)); 
 
-
+app.get("/", (req, res) => {
+ console.log("render is working fine");
+ return res.status(200).json({
+  msg:"render is working fine",
+ })
+})
 // routes
 app.use("/api/v1/user",userRoute); 
 app.use("/api/v1/message",messageRoute);
